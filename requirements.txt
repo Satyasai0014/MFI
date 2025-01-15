@@ -1,2 +1,2 @@
 streamlit-aggrid
-plotly
+plotly.express
