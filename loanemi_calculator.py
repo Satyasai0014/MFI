@@ -123,7 +123,7 @@ def generate_payment_schedule(principal, rate, tenure, payment_frequency, start_
             'Date of Payment': (start_date + datetime.timedelta(days=interval_days * i)).strftime('%Y-%m-%d'),
             
         })
-        return pd.DataFrame(schedule)
+    return pd.DataFrame(schedule)
 # Fetch all distinct customer IDs
 def fetch_all_customers():
     conn = sqlite3.connect("emi_schedule.db")
