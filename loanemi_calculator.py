@@ -212,7 +212,7 @@ def main():
 
         customer_id = st.text_input("Enter Customer ID")
         principal = st.number_input("Enter Principal Amount", min_value=1000, max_value=500000, value=1000)
-        interest_rate = st.number_input("Enter Interest Rate (%)", min_value=0.0, max_value=30.0, value=0.0)
+        interest_rate = st.number_input("Enter Interest Rate (%)", min_value=12.0, max_value=30.0, value=0.0)
 
         payment_frequency = st.radio("Choose Payment Frequency", ("Daily", "Biweekly", "Weekly", "Monthly"))
 
@@ -297,9 +297,9 @@ def main():
                 st.markdown(
                     f"<div style='color:red; font-size:18px; font-weight:bold;'>"
                     f" 🚨 Default Detected: </div>"
-                    f"<div style='font-size:16px;'>Principal Outstanding: <b>{principal_severity:.4f}</b></div>"
-                    f"<div style='font-size:16px;'>Interest Income Outstanding: <b>{interest_severity:.4f}</b></div>"
-                    f" <div style='color:red; font-size:18px;'>Total Exposure: <b> {severity:.4f}</b></div>",
+                    f"<div style='font-size:16px;'>Principal Outstanding: <b>{principal_exposure:.4f}</b></div>"
+                    f"<div style='font-size:16px;'>Interest Income Outstanding: <b>{interest_exposure:.4f}</b></div>"
+                    f" <div style='color:red; font-size:18px;'>Total Exposure: <b> {exposure:.4f}</b></div>",
                     unsafe_allow_html=True,
                 )
     # Tab 3: Administration Monitoring
