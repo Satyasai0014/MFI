@@ -289,17 +289,17 @@ def main():
                 st.success(f"Payment schedule for Customer ID {customer_id} saved successfully!")
 
             # Calculate severity if '1< 30 DPD' is selected
-            severity_data = st.session_state.schedule[st.session_state.schedule['DPD'] == '1< 30 DPD']
-            if not severity_data.empty:
-                principal_severity = severity_data['Principal Outstanding'].sum()
-                interest_severity = severity_data['Interest Income Outstanding'].sum()
-                severity = principal_severity + interest_severity
+            exposure_data = st.session_state.schedule[st.session_state.schedule['DPD'] == '1< 30 DPD']
+            if not exposure_data.empty:
+                principal_exposure = exposure_data['Principal Outstanding'].sum()
+                interest_exposure = exposure_data['Interest Income Outstanding'].sum()
+                exposure = principal_exposure + interest_exposure
                 st.markdown(
                     f"<div style='color:red; font-size:18px; font-weight:bold;'>"
-                    f" 🚨 Severity Detected: </div>"
+                    f" 🚨 Default Detected: </div>"
                     f"<div style='font-size:16px;'>Principal Outstanding: <b>{principal_severity:.4f}</b></div>"
                     f"<div style='font-size:16px;'>Interest Income Outstanding: <b>{interest_severity:.4f}</b></div>"
-                    f" <div style='color:red; font-size:18px;'>Total Severity: <b> {severity:.4f}</b></div>",
+                    f" <div style='color:red; font-size:18px;'>Total Exposure: <b> {severity:.4f}</b></div>",
                     unsafe_allow_html=True,
                 )
     # Tab 3: Administration Monitoring
