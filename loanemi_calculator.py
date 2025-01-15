@@ -212,7 +212,7 @@ def main():
 
         customer_id = st.text_input("Enter Customer ID")
         principal = st.number_input("Enter Principal Amount", min_value=1000, max_value=500000, value=1000)
-        interest_rate = st.number_input("Enter Interest Rate (%)", min_value=12.0, max_value=30.0, value=0.0)
+        interest_rate = st.number_input("Enter Interest Rate (%)", min_value=12.0, max_value=30.0, value=12.0)
 
         payment_frequency = st.radio("Choose Payment Frequency", ("Daily", "Biweekly", "Weekly", "Monthly"))
 
